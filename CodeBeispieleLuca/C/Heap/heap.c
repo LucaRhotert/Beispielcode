@@ -97,15 +97,15 @@ value_type_t removeMinimum(heap_t *heap)
     {
         return NO_VALUE;
     }
-
-    if (heap->size == 1u) // wenn es nur 1 einement gibt ist es das minimum
+    // wenn es nur 1 einement gibt ist es das minimum
+    if (heap->size == 1u) 
     {
         heap->size--;
 
         return heap->data[0];
     }
 
-    //wenn das minumum weg ist muss man den baum auch neu strukturieren
+    // wenn das minumum weg ist muss man den baum auch neu strukturieren
     uint32_t root = heap->data[0];
     heap->data[0] = heap->data[heap->size - 1];
     heap->size--;
@@ -115,7 +115,7 @@ value_type_t removeMinimum(heap_t *heap)
 }
 
 // wird geguckt ob eins der beiden kinder kleiner ist wenn ja dann tasuchen
-// rift dann rekusiv auf falls kinderbaum faslch ist
+// ruft dann rekusiv auf falls kinderbaum faslch ist
 void heapify(heap_t *heap, uint32_t idx)
 {
     if (NULL == heap)
